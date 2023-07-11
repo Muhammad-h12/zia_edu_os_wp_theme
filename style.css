@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/*
+Theme Name: Zia Edu
+/*Theme URI: https://wordpress.org/themes/ziaEdu/
+Author: Muhammad Haroon
+Author URI: https://wordpress.org/
+Description: Zia Edu is a education Theme. It powers up the Schools, Coaching institutes or Universities.
+Requires at least: 5.3
+Tested up to: 6.2
+Requires PHP: 7.4
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: zia-edu
+Tags: school, education, university, one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+*/
+
+/*
+Theme Styling Starts Here
+*/
+
+body{
+    background: darkolivegreen;
+    font-family: poppins,sans-serif;
+}
+
