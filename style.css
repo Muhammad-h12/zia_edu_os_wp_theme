@@ -22,7 +22,121 @@ Theme Styling Starts Here
 */
 
 body{
-    background: darkolivegreen;
+    background: aliceblue;
     font-family: poppins,sans-serif;
+    margin:0;
 }
 
+li{
+    list-style: none;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+.my--2{
+    margin-top:2rem;
+    margin-bottom:2rem;
+}
+
+.container{
+    max-width: 967px;
+    margin:0 auto;
+}
+
+/* utility classes ends here */
+
+/* Top Menu */
+
+#top-bar{
+    display: flex;
+    justify-content: space-between;
+    padding-right:20px;
+    padding-left:20px;
+    align-items: center;
+    min-height: 50px;
+}
+
+#top-menu-bar .menu-main-menu-container #menu-main-menu{
+    display:flex;
+    justify-content: flex-start;
+    gap:2%;
+}
+
+#top-bar #top-logo{
+    max-width: 200px;
+}
+
+/* showcase */
+
+#showcase{
+    height: 70vh;
+}
+
+#services .services-widget{
+    display: flex;
+    gap:5%;
+}
+
+.home-blog-posts {
+    display: flex;
+    gap:5%;
+}
+/* General Page Template Styling Starts Here*/
+
+#generalPageHeader{
+    height: 50vh;
+}
+
+/* blog page */
+
+#blog-page{
+    display: flex;
+}
+.blog-posts{
+    display: flex;
+    justify-content: center;
+    gap:5%;
+    flex-basis:auto;
+    flex-wrap: wrap;
+    flex:1
+}
+
+.blog-posts .post--single{
+    padding:20px;
+    max-width: 200px;
+}
+/* mobile menu */
+
+/* will do the css and js changes later at the end , because here the priority to learn wp, wp-api */
+
+.hamburger-menu {
+    display: none; /* Hide the menu initially on larger screens */
+}
+
+.hamburger-icon {
+    width: 30px;
+    height: 2px;
+    background-color: #000;
+    margin-bottom: 6px;
+}
+
+.mobile-menu {
+    display: none; /* Hide the menu initially */
+}
+
+@media (max-width: 768px) {
+    /*.hamburger-menu {*/
+    /*    display: block; !* Show the hamburger menu on smaller screens *!*/
+    /*}*/
+
+    /*.mobile-menu {*/
+    /*    display: block; !* Show the menu on smaller screens *!*/
+    /*}*/
+
+    /*#top-menu-bar ul{*/
+    /*    display: none;*/
+    /*}*/
+}

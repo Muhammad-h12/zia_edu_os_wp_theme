@@ -18,17 +18,38 @@ Defualt theme Template - This file powers up all the Pages and Posts of the Word
 <body <?php body_class(); ?>>
 <div id="page" class="site">
     <header>
-        <section class="top-bar">
-            <div id="top-logo">Site Logo</div>
+        <section id="top-bar">
+            <div id="top-logo">
+                <?php
+                  if( has_custom_logo() ){
+                      the_custom_logo();
+                  }else{
+                      ?>
+                      <a href="<?php echo home_url( '/' ) ?>"><?php bloginfo( 'name' )?></a>
+                 <?php     
+                  }
+
+                ?>
+            </div>
             <div id="top-search-box">Search Bar will go Here</div>
         </section>
-        <section>
+        <section class="my--">
             <nav id="top-menu-bar">
-                <ul>
-                    <li>Temp Menu nav 1</li>
-                    <li>Temp Menu nav 1</li>
-                    <li>Temp Menu nav 1</li>
-                </ul>
+        <!-- Register Main Menu Here and check if is mobile view or desktop view and display menu accordingly  -->
+
+                <div class="hamburger-menu">
+                    <div class="hamburger-icon">Hamburger</div>
+                </div>
+                <div class="mobile-menu">
+                    TEst
+                </div>
+
+                <?php wp_nav_menu(
+                        array(
+                                'theme_location' => 'zia_edu_main_menu',
+                                'depth' => 0
+                        )
+                ); ?>
             </nav>
         </section>
     </header>

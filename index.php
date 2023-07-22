@@ -2,19 +2,42 @@
 
 // Include Header file Here
  get_header();
+ ?>
 
-?>
+<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
     <!-- Index Page Dynamic Content Starts Here -->
          <div id="content" class="site-content">
-             <div id="showcase">
-                 Hero Section will go Here
-             </div>
-             <div id="services">
-                 Services Section Will go Here
-             </div>
-             <div id="home-blog">
-                 Blogs
-             </div>
+            <div class="container">
+                <h1>BLogs</h1>
+                 <div id="blog-page">
+
+                     <div class="blog-posts my--2">
+                         <?php
+
+                            if( have_posts() ):
+                                while( have_posts() ): the_post(); ?>
+                                    <div class="post--single">
+
+                                        <?php the_post_thumbnail( 'thumb' ); ?>
+                                        <h3><?php the_title(); ?></h3>
+                                        <p>Posted in <span> <?php echo get_the_date(); ?> </span> by <span><?php the_author_posts_link(); ?></span> <span> <?php the_category( ' ' ); ?></span></p>
+                                        <span> <?php the_tags( '', ',' ); ?></span>
+                                        <p><?php the_excerpt(); ?></p>
+
+                                    </div>
+                                <?php
+                                endwhile;
+                            else:
+                            ?>
+                     </div>
+                     <h2> No posts Found. Please check back later </h2>
+
+                        <?php endif;
+                        ?>
+                 </div>
+                <?php get_sidebar(); ?>
+            </div>
+
          </div>
     <!-- Index Page content ends here    -->
 
