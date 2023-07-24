@@ -31,7 +31,7 @@ Defualt theme Template - This file powers up all the Pages and Posts of the Word
 
                 ?>
             </div>
-            <div id="top-search-box">Search Bar will go Here</div>
+            <div id="top-search-box"><?php get_search_form(); ?></div>
         </section>
         <section class="my--">
             <nav id="top-menu-bar">
