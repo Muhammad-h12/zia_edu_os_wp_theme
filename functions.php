@@ -71,6 +71,9 @@ function ziaEdu_config(){
         'flex-width' =>true
     ) );
 
+    // title-tag
+    add_theme_support( 'title-tag' );
+
 }
 
 add_action( 'after_setup_theme', 'ziaEdu_config', 0 );
