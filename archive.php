@@ -8,7 +8,7 @@ get_header();
 <!-- Index Page Dynamic Content Starts Here -->
 <div id="content" class="site-content">
     <div class="container">
-        <?php the_archive_title( '<h1 class="archive-title">', '</h1>' )?>
+        <?php the_archive_title( '<h1 class="archive-title text-center">', '</h1>' )?>
         <?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
         <div id="blog-page">
 
@@ -16,20 +16,12 @@ get_header();
                 <?php
 
                 if( have_posts() ):
-                    while( have_posts() ): the_post(); ?>
-                        <div class="post--single">
+                while( have_posts() ): the_post();
+                    get_template_part( 'template-parts/post-loop' );
+//                    get_template_part( 'template-parts/post-loop', 'archive' ); // if we create a separate file for post-loop.archive
+                endwhile; ?>
 
-                            <?php the_post_thumbnail( 'thumb' ); ?>
-                            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <p>Posted in <span> <?php echo get_the_date(); ?> </span> by <span><?php the_author_posts_link(); ?></span> <span> <?php the_category( ' ' ); ?></span></p>
-                            <span> <?php the_tags( '', ',' ); ?></span>
-                            <p><?php the_excerpt(); ?></p>
-
-                        </div>
-                    <?php
-                    endwhile;
-                    ?>
-                    <div class="ziaEdu-pagination">
+                    <div class="ziaEdu-pagination flex justify-between">
                         <div class="pages new">
                             <?php previous_posts_link( "<< Newer Posts" ); ?>
                         </div>

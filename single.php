@@ -16,7 +16,8 @@ get_header();
 
 
             <h1><?php the_title(); ?></h1>
-             <p><?php the_content(); ?></p>
+             <p class="font-light text-sm"><?php the_content(); ?></p>
+            <h2 class="font-light text-sm">Test Data </h2>
              <?php wp_link_pages(); ?>
 
 

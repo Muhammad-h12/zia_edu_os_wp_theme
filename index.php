@@ -15,19 +15,10 @@
                          <?php
 
                             if( have_posts() ):
-                                while( have_posts() ): the_post(); ?>
-                                    <div class="post--single">
+                             while( have_posts() ): the_post();
+                                get_template_part( 'template-parts/post-loop' );
 
-                                        <?php the_post_thumbnail( 'thumb' ); ?>
-                                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                        <p>Posted in <span> <?php echo get_the_date(); ?> </span> by <span><?php the_author_posts_link(); ?></span> <span> <?php the_category( ' ' ); ?></span></p>
-                                        <span> <?php the_tags( '', ',' ); ?></span>
-                                        <p><?php the_excerpt(); ?></p>
-
-                                    </div>
-                                <?php
-                                endwhile;
-                                ?>
+                            endwhile; ?>
                                 <div class="ziaEdu-pagination">
                                     <div class="pages new">
                                         <?php previous_posts_link( "<< Newer Posts" ); ?>

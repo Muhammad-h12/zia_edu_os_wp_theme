@@ -1,9 +1,8 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    purge: [],
-    darkMode: false,
+    content: ["./*.{php,html,js}"],
     theme: {
         extend: {},
     },
-    variants: {},
     plugins: [],
-};
+}

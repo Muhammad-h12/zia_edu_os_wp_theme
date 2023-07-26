@@ -24,7 +24,7 @@
 function ziaEdu_load_scripts(){
     wp_enqueue_style( 'ziaEdu-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ), 'all');
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400&display=swap', array(), null );
-    wp_enqueue_style('theme-style', get_template_directory_uri() . '/tailwind.css');
+    wp_enqueue_style('theme-style', get_template_directory_uri() . '/dist/output.css');
 
     //enqueqe script/s
     wp_enqueue_script( 'dropdown', get_template_directory_uri() . '/js/dropdown.js', array(), '1.0', true );
@@ -73,6 +73,8 @@ function ziaEdu_config(){
 
     // title-tag
     add_theme_support( 'title-tag' );
+    add_theme_support( 'automatic-feed-links' );
+    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
 }
 
@@ -140,4 +142,10 @@ function ziaEdu_sidebars(){
             'after_title' => '</h4>'
         )
     );
+}
+// wp older than 5.2 ver
+if( ! function_exists( 'wp_body_open' ) ){
+    function wp_body_open(){
+        do_action( 'wp_body_open' );
+    }
 }

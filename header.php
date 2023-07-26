@@ -15,7 +15,7 @@ Defualt theme Template - This file powers up all the Pages and Posts of the Word
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body class="bg-gray-200"<?php body_class(); ?>>
 <div id="page" class="site">
     <header>
         <section id="top-bar">
